@@ -1,0 +1,722 @@
+{
+    "title": "Cenit IO - REST API Specification",
+    "description": "Cenit IO is an Open Platform for Data and Business Integration (iPaaS)\n",
+    "docsUrl": "https://github.com/cenit-io/openapi",
+    "url": "https://api.apis.guru/v2/specs/cenit.io/v1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://cenit.io/api/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "X-User-Access-Key": {
+                "label": "X-User-Access-Key (X-User-Access-Key)",
+                "viewClass": "TextFieldView"
+            },
+            "X-User-Access-Token": {
+                "label": "X-User-Access-Token (X-User-Access-Token)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_setup_connection": {
+            "main": "./lib/actions/get_setup_connection.js",
+            "title": "Returns a list of connections",
+            "description": "Returns a list of connections you've previously created. The connections are returned in sorted order, with the most recent connection appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_connection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_connection": {
+            "main": "./lib/actions/post_setup_connection.js",
+            "title": "Create or update a connection",
+            "description": "Creates or updates the specified connection by setting the values of the parameters passed. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_connection.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_connection__id_": {
+            "main": "./lib/actions/delete_setup_connection__id_.js",
+            "title": "Delete a connection",
+            "description": "Permanently deletes a connection. It cannot be undone.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_connection__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_connection__id_": {
+            "main": "./lib/actions/get_setup_connection__id_.js",
+            "title": "Retrieve an existing connection",
+            "description": "Retrieves the details of an existing connection. You need only supply the unique connection identifier that was returned upon connection creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_connection__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_connection_role": {
+            "main": "./lib/actions/get_setup_connection_role.js",
+            "title": "Returns a list of connection roles",
+            "description": "Returns a list of connection roles you've previously created. The connection roles are returned in sorted order, with the most recent connection role appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_connection_role.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_connection_role": {
+            "main": "./lib/actions/post_setup_connection_role.js",
+            "title": "Create or update a connection role",
+            "description": "Creates or updates the specified connection role by setting the values of the parameters passed. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_connection_role.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_connection_role__id_": {
+            "main": "./lib/actions/delete_setup_connection_role__id_.js",
+            "title": "Delete a connection role.",
+            "description": "Deletes the specified connection role.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_connection_role__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_connection_role__id_": {
+            "main": "./lib/actions/get_setup_connection_role__id_.js",
+            "title": "Return a connection role",
+            "description": "Returns a connection role",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_connection_role__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_data_type_": {
+            "main": "./lib/actions/get_setup_data_type_.js",
+            "title": "Returns a list of data types",
+            "description": "Returns a list of data types you've previously created. The data types are returned in sorted order, with the most recent DataType appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_data_type_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_data_type_": {
+            "main": "./lib/actions/post_setup_data_type_.js",
+            "title": "Create or update a data type",
+            "description": "Creates or updates the specified data type by setting the values of the parameters passed. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_data_type_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_data_type__id_": {
+            "main": "./lib/actions/delete_setup_data_type__id_.js",
+            "title": "Delete a data type",
+            "description": "Deletes the specified data type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_data_type__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_data_type__id_": {
+            "main": "./lib/actions/get_setup_data_type__id_.js",
+            "title": "Retrieve a data type",
+            "description": "Retrieves the details of an existing data type. You need only supply the unique data  type identifier that was returned upon DataType creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_data_type__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_flow_": {
+            "main": "./lib/actions/get_setup_flow_.js",
+            "title": "Returns a list of flows",
+            "description": "Returns a list of flows you've previously created. The flows are returned in sorted order, with the most recent flow appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_flow_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_flow_": {
+            "main": "./lib/actions/post_setup_flow_.js",
+            "title": "Create or update a flow",
+            "description": "Creates or updates the specified flow. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_flow_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_flow__id_": {
+            "main": "./lib/actions/delete_setup_flow__id_.js",
+            "title": "Delete a flow.",
+            "description": "Deletes the specified flow.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_flow__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_flow__id_": {
+            "main": "./lib/actions/get_setup_flow__id_.js",
+            "title": "Retrieve an existing flow",
+            "description": "Retrieves the details of an existing flow. You need only supply the unique flow identifier that was returned upon flow creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_flow__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_namespace_": {
+            "main": "./lib/actions/get_setup_namespace_.js",
+            "title": "Returns a list of namespaces",
+            "description": "Returns a list of namespaces you've previously created. The namespaces are returned in sorted order, with the most recent namespace appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_namespace_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_namespace_": {
+            "main": "./lib/actions/post_setup_namespace_.js",
+            "title": "Create or update a namespace",
+            "description": "Creates or updates the specified namespace. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_namespace_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_namespace__id_": {
+            "main": "./lib/actions/delete_setup_namespace__id_.js",
+            "title": "Delete a namespace",
+            "description": "Deletes the specified namespace.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_namespace__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_namespace__id_": {
+            "main": "./lib/actions/get_setup_namespace__id_.js",
+            "title": "Retrieve an existing namespace",
+            "description": "Retrieves the details of an existing namespace. You need only supply the unique webhook namespace that was returned upon namespace creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_namespace__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_observer_": {
+            "main": "./lib/actions/get_setup_observer_.js",
+            "title": "Returns a list of events",
+            "description": "Returns a list of events you've previously created. The events are returned in sorted order, with the most recent event appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_observer_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_observer_": {
+            "main": "./lib/actions/post_setup_observer_.js",
+            "title": "Create or update an event",
+            "description": "Creates or updates the specified event observer. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_observer_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_observer__id_": {
+            "main": "./lib/actions/delete_setup_observer__id_.js",
+            "title": "Delete an event",
+            "description": "Deletes the specified event observer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_observer__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_observer__id_": {
+            "main": "./lib/actions/get_setup_observer__id_.js",
+            "title": "Retrieve an existing event",
+            "description": "Retrieves the details of an existing event. You need only supply the unique event identifier that was returned upon event creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_observer__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_scheduler_": {
+            "main": "./lib/actions/get_setup_scheduler_.js",
+            "title": "Returns a list of schedulers",
+            "description": "Returns a list of schedulers you've previously created. The schedulers are returned in sorted order, with the most recent scheduler appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_scheduler_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_scheduler_": {
+            "main": "./lib/actions/post_setup_scheduler_.js",
+            "title": "Create or update an scheduler",
+            "description": "Creates or updates the specified scheduler. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_scheduler_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_scheduler__id_": {
+            "main": "./lib/actions/delete_setup_scheduler__id_.js",
+            "title": "Delete an schedule",
+            "description": "Deletes the specified scheduler.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_scheduler__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_scheduler__id_": {
+            "main": "./lib/actions/get_setup_scheduler__id_.js",
+            "title": "Retrieve an existing schedule",
+            "description": "Retrieves the details of an existing scheduler. You need only supply the unique scheduler identifier that was returned upon scheduler creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_scheduler__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_schema_": {
+            "main": "./lib/actions/get_setup_schema_.js",
+            "title": "Returns a list of schemas",
+            "description": "Returns a list of schemas you've previously created. The schemas are returned in sorted order, with the most recent schema appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_schema_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_schema_": {
+            "main": "./lib/actions/post_setup_schema_.js",
+            "title": "Create or update an schema",
+            "description": "Creates or updates the specified schema. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_schema_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_schema__id_": {
+            "main": "./lib/actions/delete_setup_schema__id_.js",
+            "title": "Delete an schema.",
+            "description": "Deletes the specified schema.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_schema__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_schema__id_": {
+            "main": "./lib/actions/get_setup_schema__id_.js",
+            "title": "Retrieve an existing schema",
+            "description": "Retrieves the details of an existing schema. You need only supply the unique schema identifier that was returned upon schema creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_schema__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_translator_": {
+            "main": "./lib/actions/get_setup_translator_.js",
+            "title": "Returns a list of translators",
+            "description": "Returns a list of translators you've previously created. The translators are returned in sorted order, with the most recent translator appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_translator_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_translator_": {
+            "main": "./lib/actions/post_setup_translator_.js",
+            "title": "Create or update a translator",
+            "description": "Creates or updates the specified translator. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_translator_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_translator__id_": {
+            "main": "./lib/actions/delete_setup_translator__id_.js",
+            "title": "Delete a translator",
+            "description": "Deletes the specified translator.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_translator__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_translator__id_": {
+            "main": "./lib/actions/get_setup_translator__id_.js",
+            "title": "Retrieve an existing translator",
+            "description": "Retrieves the details of an existing translator. You need only supply the unique translator identifier that was returned upon translator creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_translator__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_webhook_": {
+            "main": "./lib/actions/get_setup_webhook_.js",
+            "title": "Returns a list of webhooks",
+            "description": "Returns a list of webhooks you've previously created. The webhooks are returned in sorted order, with the most recent webhook appearing first.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_webhook_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_setup_webhook_": {
+            "main": "./lib/actions/post_setup_webhook_.js",
+            "title": "Create or update a webhook",
+            "description": "Creates or updates the specified webhook. Any parameters not provided will be left unchanged.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_setup_webhook_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "delete_setup_webhook__id_": {
+            "main": "./lib/actions/delete_setup_webhook__id_.js",
+            "title": "Delete a webhook",
+            "description": "Deletes the specified webhook.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/delete_setup_webhook__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_setup_webhook__id_": {
+            "main": "./lib/actions/get_setup_webhook__id_.js",
+            "title": "Retrieve an existing webhook",
+            "description": "Retrieves the details of an existing webhook. You need only supply the unique webhook identifier that was returned upon webhook creation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_setup_webhook__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
